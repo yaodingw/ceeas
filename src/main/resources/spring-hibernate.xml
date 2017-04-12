@@ -25,7 +25,7 @@
         </property>            <!-- 注解方式配置 -->
         <property name="packagesToScan">
             <list>
-                <value>com.sgl.model</value>
+                <value>com.model</value>
             </list>
         </property>
     </bean>        <!-- 配置事务 -->

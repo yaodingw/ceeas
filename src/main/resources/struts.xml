@@ -11,5 +11,37 @@
             <result name="success">/success.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
+
+        <!--估分选大学-->
+        <action name="cmsAction">
+            <result>chooseMajorByScore.jsp</result>
+        </action>
+
+        <!--估分选专业-->
+        <action name="ccbsAction">
+            <result>chooseCollegeByScore.jsp</result>
+        </action>
+
+        <!--全国大学排名-->
+        <action name="nurAction">
+            <result>nationalUniversityRankings.jsp</result>
+        </action>
+
+        <!--热门专业-->
+        <action name="ppAction">
+            <result>popularProfessional.jsp</result>
+        </action>
+
+        <!--编辑学校-->
+        <action name="editCollegeAction">
+            <result>editCollege.jsp</result>
+        </action>
+
+        <!--编辑专业-->
+        <action name="editMajorAction">
+            <result>editMajor.jsp</result>
+        </action>
+
+
     </package>
 </struts>

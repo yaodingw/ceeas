@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>高考志愿查询辅助系统</title>
+    <jsp:include page="/WEB-INF/page/framework/inc.jsp"/>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
     <meta name="viewport" content="width=device-width"/>
@@ -56,6 +57,10 @@
             })
         })
 
+        function query(){
+            alert("query");
+        }
+
 
     </script>
 
@@ -73,25 +78,25 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="chooseCollegeByScore.jsp">
+                    <a href="ccbsAction">
                         <i class="ti-pie-chart"></i>
                         <p>估分选大学</p>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="cmsAction">
                         <i class="ti-pie-chart"></i>
                         <p>估分选专业</p>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="nurAction">
                         <i class="ti-pie-chart"></i>
                         <p>全国大学排名</p>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="ppAction">
                         <i class="ti-pie-chart"></i>
                         <p>热门专业</p>
                     </a>
@@ -99,8 +104,8 @@
                 <li id="adminId"><a><i class="ti-pie-chart"></i>
                     <p>管理员功能</p></a>
                     <ul id="adminSon" style="display:none">
-                        <li><a href="#">编辑学校</a></li>
-                        <li><a href="#">编辑专业</a></li>
+                        <li><a href="editCollegeAction">编辑学校</a></li>
+                        <li><a href="editMajorAction">编辑专业</a></li>
                     </ul>
                 </li>
 
@@ -157,15 +162,19 @@
         </nav>
 
 
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
+        <div class="content" style="border: coral 1px solid">
+            <div class="container-fluid" style="border:chartreuse 1px solid">
+                <form>
 
+                </form>
+                <div class="row" style="border: red 1px solid">
+                    eee
                 </div>
             </div>
         </div>
 
 
+        <!--页脚-->
         <footer class="footer">
             <div class="container-fluid">
                 <div class="copyright pull-right">

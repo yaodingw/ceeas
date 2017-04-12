@@ -72,26 +72,26 @@
             </div>
 
             <ul class="nav">
-                <li>
-                    <a href="chooseCollegeByScore.jsp">
+                <li class="active">
+                    <a href="ccbsAction">
                         <i class="ti-pie-chart"></i>
                         <p>估分选大学</p>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="dashboard.html">
+                <li>
+                    <a href="cmsAction">
                         <i class="ti-pie-chart"></i>
                         <p>估分选专业</p>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="nurAction">
                         <i class="ti-pie-chart"></i>
                         <p>全国大学排名</p>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="ppAction">
                         <i class="ti-pie-chart"></i>
                         <p>热门专业</p>
                     </a>
@@ -99,8 +99,8 @@
                 <li id="adminId"><a><i class="ti-pie-chart"></i>
                     <p>管理员功能</p></a>
                     <ul id="adminSon" style="display:none">
-                        <li><a href="#">编辑学校</a></li>
-                        <li><a href="#">编辑专业</a></li>
+                        <li><a href="editCollegeAction">编辑学校</a></li>
+                        <li><a href="editMajorAction">编辑专业</a></li>
                     </ul>
                 </li>
 
