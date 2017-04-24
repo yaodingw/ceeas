@@ -17,7 +17,7 @@ a { text-decoration: none; color: #333; }
 a:hover { text-decoration: underline; }
 .hide{display: none}
 
-.grid:after{content:".";display:block;height:0;clear:both;visibility:hidden}.grid{display:inline-block;width:110%}* html .grid{height:1%}.grid{display:block}
+.grid:after{content:".";display:block;height:0;clear:both;visibility:hidden}.grid{display:inline-block;width:150%}* html .grid{height:1%}.grid{display:block}
 .left{float: left;}
 .right{float: right;}
 .center{width: 1000px;margin: 0 auto;}
@@ -4216,6 +4216,9 @@ input:focus{
 }
 .li-w630{
     width:630px;
+}
+.li-w911{
+    width:911px;
 }
 .lin-h36{
     height: 36px;

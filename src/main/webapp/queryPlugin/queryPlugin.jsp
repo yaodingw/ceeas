@@ -7,7 +7,7 @@
 --%>
 <!--头部部分结束！！-->
 <!-- 主体内容 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="main center grid margin15">
     <div class="left w-670">
         <!--查国内大学-->
@@ -15,7 +15,7 @@
             <div class="clfloor grid">
                 <span class="schTit left">院校省份</span>
                 <i class="ti-angle-right"></i>
-                <div class="sch-content left lin-seachbox-cs grid li-w630" id="schoolplace">
+                <div class="sch-content left lin-seachbox-cs grid li-w911" id="schoolplace">
                     <em class="clf-active">全部</em>
                     <em>北京</em>
                     <em>天津</em>
@@ -33,7 +33,7 @@
                     <em>安徽</em>
                     <em>江西</em>
                     <em>湖北</em>
-                    <em  style="margin-left:34px;">湖南</em>
+                    <em >湖南</em>
                     <em>重庆</em>
                     <em>四川</em>
                     <em>贵州</em>
@@ -41,7 +41,7 @@
                     <em>广东</em>
                     <em>广西</em>
                     <em>福建</em>
-                    <em>甘肃</em>
+                    <em style="margin-left:34px;">甘肃</em>
                     <em>宁夏</em>
                     <em>新疆</em>
                     <em>西藏</em>
@@ -90,7 +90,7 @@
             <div class="clfloor grid">
                 <span class="schTit left">特殊属性</span>
                 <i class="ti-angle-right"></i>
-                <div class="sch-content left lin-seachbox-cs"id="schoogc">
+                <div class="sch-content left lin-seachbox-cs" id="schoogc">
                     <em class="clf-active">全部</em>
                     <em>985工程</em>
                     <em>211工程</em>
@@ -102,6 +102,8 @@
             <div class="clfloor lin-seachbox-condi lin-hide">
                 <span class="schTit left">已选条件</span>
                 <i class="ti-angle-right"></i>
-                <div class="sch-content marl100 lin-seachbox-choose">       </div>
+                <div class="sch-content marl100 lin-seachbox-choose"></div>
             </div>
         </div>
+    </div>
+</div>

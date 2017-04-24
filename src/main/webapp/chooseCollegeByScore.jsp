@@ -53,7 +53,7 @@
     <script src="assets/js/demo.js"></script>
     <script type="text/javascript">
         $(function () {
-            $("#adminId").click(function(){
+            $("#adminId").click(function () {
                 $("#adminSon").toggle();
             })
         })
@@ -162,7 +162,9 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <jsp:include page="queryPlugin/queryPlugin.jsp"/>
+                    <div class="queryPlugin">
+                        <jsp:include page="queryPlugin/queryPlugin.jsp"/>
+                    </div>
                 </div>
             </div>
         </div>
