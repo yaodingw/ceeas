@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="ccbs" extends="default" namespace="/ccbs" strict-method-invocation="false">
+        <action name="ccbs_*" class="ccbsAction" method="{1}">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

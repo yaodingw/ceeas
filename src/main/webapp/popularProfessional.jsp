@@ -24,10 +24,18 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet"/>
 
+    <link href="assets/css/index.css" rel="stylesheet"/>
+
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
+
+    <link href="css/prppof.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="base/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="base/easyui/themes/icon.css">
+
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -49,6 +57,10 @@
 
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
+
+    <script src="base/baseJs/index.js"></script>
+    <script src="base/easyui/jquery.min.js"></script>
+    <script src="base/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#adminId").click(function(){
@@ -67,8 +79,9 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="index.jsp" class="simple-text">
-                    高考志愿填报辅助系统
+                    高考志愿填报查询辅助系统
                 </a>
+                <a href="login.jsp" style="position: absolute;left: 100px;font-size: 16px;">登录/注册</a>
             </div>
 
             <ul class="nav">
@@ -87,7 +100,7 @@
                 <li>
                     <a href="nurAction">
                         <i class="ti-pie-chart"></i>
-                        <p>全国大学排名</p>
+                        <p>帮你选大学</p>
                     </a>
                 </li>
                 <li class="active">
@@ -119,39 +132,9 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Template</a>
+                    <a class="navbar-brand" href="#">热门专业</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-                                <p>Stats</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <p class="notification">5</p>
-                                <p>Notifications</p>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="ti-settings"></i>
-                                <p>Settings</p>
-                            </a>
-                        </li>
-                    </ul>
-
                 </div>
             </div>
         </nav>
@@ -160,7 +143,21 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-
+                    <div class="dataContent">
+                        <table class="easyui-datagrid" style="width:100%;height:auto"
+                               data-options="singleSelect:true,collapsible:true,url:'jsonData/popPor/ppData.json',method:'get',pagination:'true'">
+                            <thead>
+                            <tr>
+                                <th data-options="field:'seq',width:94,align:'center'">排名</th>
+                                <th data-options="field:'majorName',width:160,align:'center'">专业名称</th>
+                                <th data-options="field:'cengci',width:130,align:'center'">专业层次</th>
+                                <th data-options="field:'zytype',width:130,align:'center'">专业类别</th>
+                                <th data-options="field:'yuanxiao',width:130,align:'center'">开设院校	</th>
+                                <th data-options="field:'redu',width:124,align:'center'">人气值</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,25 +6,35 @@
     <constant name="struts.devMode" value="true"/>
     <constant name="struts.configuration.xml.reload" value="true"/>      <!-- 字符集编码 -->
     <constant name="struts.i18n.encoding" value="utf-8"/>
-    <package name="defaultPackage" namespace="/" extends="struts-default">
+    <package name="default" namespace="/" extends="json-default">
+        <interceptors>
+            <interceptor name="sessionOut"
+                         class="com.business.SessionIterceptor"/>
+            <interceptor-stack name="crudStack">
+                <interceptor-ref name="sessionOut" >
+                    <param name="prepare.alwaysInvokePrepare">false</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="crudStack" />
         <action name="userAction" class="userAction" method="reg">
             <result name="success">/success.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
 
-        <!--估分选大学-->
+        <!--大学录取线-->
         <action name="cmsAction">
             <result>chooseMajorByScore.jsp</result>
         </action>
 
-        <!--估分选专业-->
-        <action name="ccbsAction">
-            <result>chooseCollegeByScore.jsp</result>
+        <!--估分选大学-->
+        <action name="ccbsAction" method="ccbsIndex" class="ccbsAction">
+            <result name="ccbsIndex">chooseCollegeByScore.jsp</result>
         </action>
 
-        <!--全国大学排名-->
-        <action name="nurAction">
-            <result>nationalUniversityRankings.jsp</result>
+        <!--帮你选大学-->
+        <action name="nurAction" method="nurIndex" class="nurAction">
+            <result name="nurIndex">nationalUniversityRankings.jsp</result>
         </action>
 
         <!--热门专业-->
@@ -42,6 +52,14 @@
             <result>editMajor.jsp</result>
         </action>
 
+        <!--登录界面-->
+        <action name="loginAction" method="login" class="loginAction">
+            <result name="login">editCollege.jsp</result>
+            <result name="relogin">login.jsp</result>
+        </action>
+
 
     </package>
+    
+    <include file="configBusi/struts/struts-ccbs.xml"></include>
 </struts>

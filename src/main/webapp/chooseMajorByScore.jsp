@@ -24,10 +24,33 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet"/>
 
+    <link href="assets/css/index.css" rel="stylesheet"/>
+
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="base/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="base/easyui/themes/icon.css">
+
+    <style>
+        .dataContent{
+            width: 1000px;margin: 0 auto;
+        }
+        #searchInput{
+            border-radius: 25px;
+            width: 270px;
+            margin-top:30px;
+            margin-right:100px;
+            outline: none;
+            background-image:url("base/images/search.png");
+            background-repeat: no-repeat;
+            background-size: 21px 21px;
+            background-size: 21px 21px;
+            background-position: 95%;
+        }
+    </style>
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -49,6 +72,10 @@
 
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
+
+    <script src="base/baseJs/index.js"></script>
+    <script src="base/easyui/jquery.min.js"></script>
+    <script src="base/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#adminId").click(function(){
@@ -67,8 +94,9 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="index.jsp" class="simple-text">
-                    高考志愿填报辅助系统
+                    高考志愿填报查询辅助系统
                 </a>
+                <a href="login.jsp" style="position: absolute;left: 100px;font-size: 16px;">登录/注册</a>
             </div>
 
             <ul class="nav">
@@ -81,13 +109,13 @@
                 <li class="active">
                     <a href="cmsAction">
                         <i class="ti-pie-chart"></i>
-                        <p>估分选专业</p>
+                        <p>大学录取线</p>
                     </a>
                 </li>
                 <li>
                     <a href="nurAction">
                         <i class="ti-pie-chart"></i>
-                        <p>全国大学排名</p>
+                        <p>帮你选大学</p>
                     </a>
                 </li>
                 <li>
@@ -119,39 +147,17 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Template</a>
+                    <a class="navbar-brand" href="#">大学录取线</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-                                <p>Stats</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <p class="notification">5</p>
-                                <p>Notifications</p>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                            </ul>
+                            <jsp:include page="queryPlugin/selectProvince.jsp"></jsp:include>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="ti-settings"></i>
-                                <p>Settings</p>
-                            </a>
+                            <input id="searchInput" type="text" placeholder="    根据分数查询">
                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>
@@ -160,7 +166,25 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-
+                    <div class="queryPlugin">
+                        <jsp:include page="queryPlugin/queryPlugin.jsp"/>
+                    </div>
+                    <div class="dataContent">
+                        <table class="easyui-datagrid" style="width:100%;height:auto"
+                               data-options="singleSelect:true,collapsible:true,url:'jsonData/cmb/cmbJson.json',method:'get',pagination:'true'">
+                            <thead>
+                            <tr>
+                                <th data-options="field:'schoolname',width:140,align:'center'">学校名称</th>
+                                <th data-options="field:'localprovince',width:140,align:'center'">省份</th>
+                                <th data-options="field:'studenttype',width:140,align:'center'">学科类别</th>
+                                <th data-options="field:'year',width:140,align:'center'">年份</th>
+                                <th data-options="field:'batch',width:140,align:'center'">录取批次</th>
+                                <th data-options="field:'var',width:140,align:'center'">平均分</th>
+                                <th data-options="field:'provincescore',width:140,align:'center'">省控线</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

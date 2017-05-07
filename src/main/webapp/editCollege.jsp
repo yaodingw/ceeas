@@ -81,7 +81,7 @@
                 <li>
                     <a href="cmsAction">
                         <i class="ti-pie-chart"></i>
-                        <p>估分选专业</p>
+                        <p>大学录取线</p>
                     </a>
                 </li>
                 <li>
