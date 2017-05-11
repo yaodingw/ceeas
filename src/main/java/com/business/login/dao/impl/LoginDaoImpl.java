@@ -12,7 +12,7 @@ import org.hibernate.Query;
 public class LoginDaoImpl extends PaginationDaoImpl<UserVO> implements LoginDao {
     @Override
     public boolean checkUserLogin(String username, String password) {
-        String sql="select count(*) from admin where NAME='"+username+"' and PASSWORD='"+password+"'";
+        String sql="select count(*) from ADMIN where NAME='"+username+"' and PASSWORD='"+password+"'";
         Query query=this.getCurrentSession().createSQLQuery(sql);
         String res=query.uniqueResult().toString();
         boolean flag=false;

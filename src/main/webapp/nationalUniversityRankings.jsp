@@ -149,13 +149,13 @@
                         <p>热门专业</p>
                     </a>
                 </li>
-                <li id="adminId"><a><i class="ti-pie-chart"></i>
+               <%-- <li id="adminId"><a><i class="ti-pie-chart"></i>
                     <p>管理员功能</p></a>
                     <ul id="adminSon" style="display:none">
                         <li><a href="editCollegeAction">编辑学校</a></li>
                         <li><a href="editMajorAction">编辑专业</a></li>
                     </ul>
-                </li>
+                </li>--%>
 
             </ul>
         </div>

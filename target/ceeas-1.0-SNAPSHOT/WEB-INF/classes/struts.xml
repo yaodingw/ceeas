@@ -22,7 +22,7 @@
             <result name="error">/error.jsp</result>
         </action>
 
-        <!--估分选专业-->
+        <!--大学录取线-->
         <action name="cmsAction">
             <result>chooseMajorByScore.jsp</result>
         </action>
@@ -32,7 +32,7 @@
             <result name="ccbsIndex">chooseCollegeByScore.jsp</result>
         </action>
 
-        <!--全国大学排名-->
+        <!--帮你选大学-->
         <action name="nurAction" method="nurIndex" class="nurAction">
             <result name="nurIndex">nationalUniversityRankings.jsp</result>
         </action>

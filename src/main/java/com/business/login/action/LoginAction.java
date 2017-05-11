@@ -64,6 +64,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
         String password=this.request.getParameter("password");
         boolean res=loginService.checkLoginUser(username,password);
         if(res){
+            request.setAttribute("userAuthority",username);
             return "login";
         }
         return "relogin";
