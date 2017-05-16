@@ -77,6 +77,9 @@ public class QueryModel {
     public void setSchoolPT(String schoolPT) {
         if(StringUtil.isNullOrEmpty(schoolPT)){
             schoolPT=schoolPT.replaceAll("^(p0+)","");
+            if(schoolPT.equals("8")){
+                schoolPT="0";
+            }
             this.schoolPT = schoolPT;
         }
     }
@@ -88,6 +91,9 @@ public class QueryModel {
     public void setSchoolGC(String schoolGC) {
         if(StringUtil.isNullOrEmpty(schoolGC)){
             schoolGC=schoolGC.replaceAll("^(g0+)","");
+            if(schoolGC.equals("2")){
+                schoolGC="0";
+            }
             this.schoolGC = schoolGC;
 
         }

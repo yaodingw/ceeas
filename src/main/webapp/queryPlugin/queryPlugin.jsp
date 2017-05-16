@@ -93,6 +93,7 @@
                 <div class="sch-content left lin-seachbox-cs" id="schoogc">
                     <em id="g00"  class="clf-active">全部</em>
                     <em id="g01" >教育部直属</em>
+                    <em id="g02" >其他</em>
                 </div>
             </div>
             <div class="clfloor lin-seachbox-condi lin-hide">
