@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="ccbsAction" class="com.business.ccbs.action.CcbsAction"></bean>
+    <bean id="ccbsAction" class="com.business.ccbs.action.CcbsAction"
+    p:ccbsService-ref="ccbsService"/>
+
+    <bean id="ccbsService" class="com.business.ccbs.service.impl.CcbsServiceImpl"
+    p:ccbsDao-ref="ccbsDao"/>
+
+    <bean id="ccbsDao" class="com.business.ccbs.dao.impl.CcbsDaoImpl"/>
 </beans>

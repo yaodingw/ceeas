@@ -10,7 +10,31 @@ $(function(){
         var schoolmajor=$("#schoolmajor .clf-active").attr("id");
         var schoolpt=$("#schoolpt .clf-active").attr("id");
         var schoogc=$("#schoogc .clf-active").attr("id");
-        alert("院校省份："+schoolplace+"、学院分类："+schoolmajor+"、学历层次："+schoolpt+"、特殊性质："+schoogc);
+        var stuPlace=$("#stuPlace").find("option:selected").val();
+        var stuScore=$("#searchInput").val();
+        // =$("#stuPlace").text();
+        // alert("院校省份："+schoolplace+"、学院分类："+schoolmajor+"、学历层次："+schoolpt+"、特殊性质："+schoogc);
+        getCcbsList(schoolplace,schoolmajor,schoolpt,schoogc,stuPlace,stuScore);
+
 
     });
 })
+function getCcbsList(schoolplace,schoolmajor,schoolpt,schoogc,stuPlace,stuScore){
+    $("#ccbsDatagrid").datagrid({
+        url : 'http://localhost:8080/ccbs/ccbs_getCcbsList.action',
+        pagination : true,
+        nowrap : true,
+        border : true,
+        striped : true,
+        queryParams : {
+            schoolplace : 	schoolplace,//当前页面的菜单代码
+            schoolmajor:schoolmajor,
+            schoolpt:schoolpt,
+            schoogc:schoogc,
+            stuPlace:stuPlace,
+            stuScore:stuScore
+        },
+        onLoadSuccess: function (data){
+        }
+    })
+}

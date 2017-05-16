@@ -92,11 +92,7 @@
                 <i class="ti-angle-right"></i>
                 <div class="sch-content left lin-seachbox-cs" id="schoogc">
                     <em id="g00"  class="clf-active">全部</em>
-                    <em id="g01" >985工程</em>
-                    <em id="g02" >211工程</em>
-                    <em id="g03" >教育部直属</em>
-                    <em id="g04" >中央部委</em>
-                    <em id="g05" >自主招生试点</em>
+                    <em id="g01" >教育部直属</em>
                 </div>
             </div>
             <div class="clfloor lin-seachbox-condi lin-hide">

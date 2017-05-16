@@ -40,15 +40,19 @@
         }
         #searchInput{
             border-radius: 25px;
-            width: 270px;
+            width: 200px;
+            margin-top:30px;
+            margin-right:12px;
+            outline: none;
+            /*background-image:url("base/images/search.png");*/
+            /*background-repeat: no-repeat;*/
+            /*background-size: 21px 21px;*/
+            /*background-size: 21px 21px;*/
+            /*background-position: 95%;*/
+        }
+        #searchBut{
             margin-top:30px;
             margin-right:100px;
-            outline: none;
-            background-image:url("base/images/search.png");
-            background-repeat: no-repeat;
-            background-size: 21px 21px;
-            background-size: 21px 21px;
-            background-position: 95%;
         }
     </style>
     <!--   Core JS Files   -->
@@ -151,11 +155,14 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
+                        <li id="stuPlace">
                             <jsp:include page="queryPlugin/selectProvince.jsp"></jsp:include>
                         </li>
                         <li>
                             <input id="searchInput" type="text" placeholder="    根据分数查询">
+                        </li>
+                        <li>
+                            <input id="searchBut"  type="button" value="查询">
                         </li>
                     </ul>
                 </div>
@@ -170,8 +177,7 @@
                         <jsp:include page="queryPlugin/queryPlugin.jsp"/>
                     </div>
                     <div class="dataContent">
-                        <table class="easyui-datagrid" style="width:100%;height:auto"
-                               data-options="singleSelect:true,collapsible:true,url:'jsonData/ccbs/ccbsData.json',method:'get',pagination:'true'">
+                        <table id="ccbsDatagrid" class="easyui-datagrid" style="width:100%;height:700px">
                             <thead>
                             <tr>
                                 <th data-options="field:'schoolname',width:200,align:'center'">学校名称</th>

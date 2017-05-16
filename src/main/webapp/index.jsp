@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>高考志愿查询辅助系统</title>
-    <jsp:include page="/WEB-INF/page/framework/inc.jsp"/>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
     <meta name="viewport" content="width=device-width"/>
@@ -25,10 +24,33 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet"/>
 
+    <link href="assets/css/index.css" rel="stylesheet"/>
+
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/themify-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="base/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="base/easyui/themes/icon.css">
+
+    <style>
+        .dataContent{
+            width: 1000px;margin: 0 auto;
+        }
+        #searchInput{
+            border-radius: 25px;
+            width: 270px;
+            margin-top:30px;
+            margin-right:100px;
+            outline: none;
+            background-image:url("base/images/search.png");
+            background-repeat: no-repeat;
+            background-size: 21px 21px;
+            background-size: 21px 21px;
+            background-position: 95%;
+        }
+    </style>
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -50,16 +72,16 @@
 
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="assets/js/demo.js"></script>
+
+    <script src="base/baseJs/index.js"></script>
+    <script src="base/easyui/jquery.min.js"></script>
+    <script src="base/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $("#adminId").click(function(){
+            $("#adminId").click(function () {
                 $("#adminSon").toggle();
             })
         })
-
-        function query(){
-            alert("query");
-        }
 
 
     </script>
@@ -72,8 +94,9 @@
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="index.jsp" class="simple-text">
-                    高考志愿填报辅助系统
+                    高考志愿填报查询辅助系统
                 </a>
+                <a href="login.jsp" style="position: absolute;left: 100px;font-size: 16px;">登录/注册</a>
             </div>
 
             <ul class="nav">
@@ -92,7 +115,7 @@
                 <li>
                     <a href="nurAction">
                         <i class="ti-pie-chart"></i>
-                        <p>全国大学排名</p>
+                        <p>帮你选大学</p>
                     </a>
                 </li>
                 <li>
@@ -101,13 +124,13 @@
                         <p>热门专业</p>
                     </a>
                 </li>
-                <li id="adminId"><a><i class="ti-pie-chart"></i>
-                    <p>管理员功能</p></a>
-                    <ul id="adminSon" style="display:none">
-                        <li><a href="editCollegeAction">编辑学校</a></li>
-                        <li><a href="editMajorAction">编辑专业</a></li>
-                    </ul>
-                </li>
+                <%-- <li id="adminId"><a><i class="ti-pie-chart"></i>
+                     <p>管理员功能</p></a>
+                     <ul id="adminSon" style="display:none">
+                         <li><a href="editCollegeAction">编辑学校</a></li>
+                         <li><a href="editMajorAction">编辑专业</a></li>
+                     </ul>
+                 </li>--%>
 
             </ul>
         </div>
@@ -124,57 +147,47 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Template</a>
+                    <a class="navbar-brand" href="#">估分选大学</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-panel"></i>
-                                <p>Stats</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="ti-bell"></i>
-                                <p class="notification">5</p>
-                                <p>Notifications</p>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                            </ul>
+                            <jsp:include page="queryPlugin/selectProvince.jsp"></jsp:include>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="ti-settings"></i>
-                                <p>Settings</p>
-                            </a>
+                            <input id="searchInput" type="text" placeholder="    根据分数查询">
                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>
 
 
-        <div class="content" style="border: coral 1px solid">
-            <div class="container-fluid" style="border:chartreuse 1px solid">
-                <form>
-
-                </form>
-                <div class="row" style="border: red 1px solid">
-                    eee
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="queryPlugin">
+                        <jsp:include page="queryPlugin/queryPlugin.jsp"/>
+                    </div>
+                    <div class="dataContent">
+                        <table class="easyui-datagrid" style="width:100%;height:auto"
+                               data-options="singleSelect:true,collapsible:true,url:'jsonData/ccbs/ccbsData.json',method:'get',pagination:'true'">
+                            <thead>
+                            <tr>
+                                <th data-options="field:'schoolname',width:200,align:'center'">学校名称</th>
+                                <th data-options="field:'province',width:200,align:'center'">省份</th>
+                                <th data-options="field:'schooltype',width:200,align:'center'">学历层次</th>
+                                <th data-options="field:'schoolproperty',width:200,align:'center'">学校类型</th>
+                                <th data-options="field:'schoolnature',width:198,align:'center'">办学性质</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
 
 
-        <!--页脚-->
         <footer class="footer">
             <div class="container-fluid">
                 <div class="copyright pull-right">
